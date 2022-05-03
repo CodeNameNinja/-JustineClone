@@ -1,0 +1,183 @@
+
+.main-header-container{
+  position: relative;
+  display: grid;
+  height: 95vh;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 3fr 1fr;
+  grid-template-areas:
+    "main  main-hero"
+    "main  main-hero";
+    text-transform: uppercase;
+}
+
+.main-header__main{
+  grid-area: main;
+  background-color: var(--Primary);
+  height: 100%;
+  width: 100%;
+  display:grid;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas:
+  "title"
+  "actions";
+}
+
+.main-header__title {
+  grid-area: title;
+  h1{
+    font-weight: 500;
+    color:var(--white);
+    // width: 100%;
+    // height: 100%;
+    font-size: calc(25px + (50 - 14) * ((100vw - 300px) / (1600 - 300)));
+    margin: 2rem;
+    position: relative;
+    top: 25%;
+    letter-spacing: 2px;
+  }
+}
+.main-header__actions{
+  grid-area: actions;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  height:100%;
+  justify-items:start;
+  align-content: center;
+  position: relative;
+  bottom: 5vh;
+  text-align:center
+}
+.main-header_shop_now{
+  position: relative;
+  background-color: var(--isabelline);
+  color: var(--nickel);
+  left: 15%;
+}
+
+.hover-color:hover{
+  background-color: var(--jet);
+  color: var(--white);
+  cursor: pointer;
+
+}
+.hover-color{
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.main-header-container h2{
+  position: relative;
+width: 100%;
+font-size: calc(5px + (20 - 5) * ((100vw - 300px) / (1600 - 300)));
+display: flex;
+left: 50%;
+transform: translate(-50%, -50%);
+justify-content: center;
+align-items: center;
+}
+.main-header-container span{
+margin-left: 3%;
+font-size:100%;
+}
+.main-header_view-deals{
+  background-color: var(--Secondary);
+  color: var(--white);
+  right: 15%;
+}
+.main-header_hero-image{
+grid-area: main-hero;
+// background: #CBCAD1 no-repeat;
+background: url('../../assets/home/home-hero-2.png') no-repeat;
+background-size: cover;
+width: 100%;
+height: auto;
+background-position: center;
+// img{
+//   border: 2px solid var(--Primary);
+//   width: auto;
+//   height: 100%;
+//   margin: 0 auto;
+//   display: inherit;
+// }
+}
+
+
+.circle{
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  height: 0;
+  padding: 25% 0;
+  border-radius: 50%;
+}
+.circle-sm{
+  border-radius: 50%;
+  height: 50px;
+  width:   50px;
+  position: absolute;
+  left:10%;
+  bottom: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Newly Arriveds
+.newly-arrived-container{
+  // display:grid;
+  height:75%;
+  margin: 2em;
+  // grid-template-rows: 5% 90%;
+  position: relative;
+}
+    .newly-arrived-container h3{
+      width: 100%;
+      text-align: center;
+      font-size: calc(25px + (35 - 25) * ((100vw - 300px) / (1600 - 300)));
+      grid-row: 1/2;
+      text-transform: uppercase;
+    }
+.newly-arrived-grid-container{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap:1em;
+  width: auto;
+  height: auto;
+  grid-row: 2/3;
+  margin:0 5%;
+}
+@media only screen and (max-width: 700px) {
+
+.main-header-container{
+grid-template-columns: 1fr;
+grid-template-rows: 2fr 1fr;
+height:auto;
+grid-template-areas:
+"main-hero"
+"main";
+.main-header_hero-image{
+  background: url('../../assets/home/home-hero-mobile.jpg') no-repeat;
+  height: 100%;
+  width: auto;
+  background-position: 40% 50%;
+  background-size: cover;
+}
+ img{
+   height: 100%;
+   width: 100%;
+ }
+.main-header__actions h2{
+  font-size: 2.5vw;
+}
+}
+.categories-container{
+  grid-template-columns: 1fr;
+}
+.newly-arrived-grid-container{
+  grid-template-columns: 1fr;
+}
+
+.arrived-card-container{
+  min-height:500px;
+}
+}

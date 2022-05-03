@@ -1,0 +1,26 @@
+.contact-container{
+  display: grid;
+  min-height: 100vh;
+  height:100%;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  overflow: hidden;
+  justify-content: center;
+  gap: 50px;
+}
+.displayImage{
+  background: url('../../assets/home/login-image.jpg') no-repeat;
+background-size: contain;
+background-position: 50%;
+transform: scaleX(-1);
+min-height: 50vh;
+}
+
+form{
+  justify-self: center;
+  align-self: center;
+  width:calc(250px + (500 - 250) * ((100vw - 300px) / (1600 - 300)));
+
+}
+mat-form-field{
+  display: block;
+}

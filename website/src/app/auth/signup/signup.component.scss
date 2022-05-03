@@ -1,0 +1,39 @@
+.signup-container{
+  display:grid;
+  height: 95vh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+  "image form";
+}
+.displayImage{
+  grid-area: image;
+  background: url('../../../assets/home/login-image.jpg') no-repeat;
+background-size: contain;
+background-position: 50%;
+transform: scaleX(-1);
+}
+.signup-form-container{
+  justify-self: center;
+  align-self: center;
+  grid-area: form;
+  width:calc(250px + (500 - 250) * ((100vw - 300px) / (1600 - 300)));;
+}
+.names{
+  display:flex
+}
+.names mat-form-field{
+  padding-right: 5px;
+  width:50%
+}
+mat-form-field{
+  display:block
+}
+@media only screen and (max-width: 600px) {
+  .signup-container{
+    grid-template-columns: 1fr;
+    grid-template-areas: 'form';
+  }
+  .displayImage{
+    display:none;
+  }
+}

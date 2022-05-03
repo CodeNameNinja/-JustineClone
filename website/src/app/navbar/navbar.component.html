@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand uppercase" href="#">The Curators</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" [routerLink] = "['home']">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" [routerLink] = "['shop']">Shop</a>
+      <a class="nav-item nav-link"[routerLink] = "['/about']">About</a>
+      <a class="nav-item nav-link" [routerLink] = "['/contact']">Contact Us</a>
+    </div>
+  </div>
+  <div class="float-right" style = "display:flex">
+    <a *ngIf="!userIsAuthenticated" class = 'nav-item nav-link' routerLink = 'signup'>Sign Up</a>
+    <a *ngIf="!userIsAuthenticated" class = 'nav-item nav-link' routerLink = 'login'>login</a>
+    <button *ngIf="userIsAuthenticated" mat-button [matMenuTriggerFor]="menu"><span class="material-icons">
+      person
+      </span></button>
+    <mat-menu  #menu="matMenu">
+    <button mat-menu-item [routerLink] = "['/my-account/', authService.getUserId()]">My Account</button>
+    <button *ngIf="authService.getIsAdminAuth()" mat-menu-item class = ' btn' [routerLink] = "['/admin/dashboard']">Admin</button>
+    <button   mat-menu-item class = ' btn' (click) = onLogout()>logout</button>
+   </mat-menu>
+    <button mat-button *ngIf="userIsAuthenticated"class = 'nav-item nav-link cart__link' (click) ="shopService.toggleSideNav()"><span class="material-icons cart" >shopping_cart </span><span *ngIf = 'shopService.CartLength > 0'class = "cart__total">{{shopService.CartLength}}</span></button>
+  </div>
+</nav>

@@ -1,0 +1,45 @@
+<div class="main-header-container">
+  <div class="main-header__main">
+    <div class="main-header__title">
+      <h1>THE CURATORS</h1>
+    </div>
+    <div class="main-header__actions">
+      <div class="main-header_shop_now circle hover-color" [routerLink] ="['/shop']">
+        <h2>
+          Shop Now
+          <span class="material-icons">
+            play_circle_outline
+          </span>
+        </h2>
+      </div>
+      <div
+        class="main-header_view-deals circle hover-color"
+        [routerLink] ="['/shop']"
+        (click) = "shopService.onSaleChecked = true"
+      >
+        <h2>
+          On Sale
+          <span class="material-icons">
+            play_circle_outline
+          </span>
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="main-header_hero-image">
+    <!-- <img src="../../assets/home/home-hero-2.jpg" alt="main image"> -->
+  </div>
+</div>
+<hr>
+<app-categories-carousel></app-categories-carousel>
+<div class="newly-arrived-container">
+  <h3>Just Arrived</h3>
+  <hr />
+  <div *ngIf="!isLoading" class="newly-arrived-grid-container">
+    <app-product-item *ngFor = "let productDetails of products" [product] = "productDetails"></app-product-item>
+  </div>
+  <mat-spinner
+    *ngIf="isLoading"
+    style="position: absolute; top: 50%; left: 50%;"
+  ></mat-spinner>
+</div>

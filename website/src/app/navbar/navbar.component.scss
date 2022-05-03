@@ -1,0 +1,39 @@
+.navbar{
+  z-index: 999;
+  position: relative;
+  width: 100%;
+}
+.navbar-collapse{
+    justify-content: center;
+}
+.navbar-brand{
+  font-size: calc(15px + (25 - 15) * ((100vw - 300px) / (1600 - 300)));
+}
+.cart{
+  position: relative;
+  color: var(--jet);
+}
+a .cart:hover{
+  transform: scale(1.2);
+}
+.cart__total{
+  position: absolute;
+  display: inline-block;
+  color: var(--white);
+  background-color: red;
+  height: 15px;
+  width: 15px;
+  border: var(--nickel) 1px solid;
+  padding: 3px 3px;
+  border-radius: 35px;
+  font-size: 0.75em;
+  line-height: 0.5;
+}
+.cart__link{
+  cursor: pointer;
+}
+@media only screen and (max-width: 500px){
+  .navbar{
+    position: fixed;
+  }
+}

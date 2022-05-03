@@ -1,0 +1,11 @@
+mat-tab-nav-bar{
+  background-color: #29524A !important;
+}
+a{
+ text-decoration: none;
+}
+@media only screen and (max-width: 500px){
+  app-sidenav{
+    display: none;
+  }
+}

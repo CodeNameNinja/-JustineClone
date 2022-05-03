@@ -1,0 +1,33 @@
+.container-fluid{
+  background-color: var(--primary);
+  padding: 5%;
+}
+.order-items{
+  img{
+    height:auto;
+    width:100%;
+    max-width:100px;
+  }
+
+}
+
+
+.amount{
+
+  h3{
+    color: rgb(117, 117, 117)
+  }
+  h2{
+    margin-left: auto;
+    color: #69df70;
+  }
+}
+.order-card-container{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  img{
+    justify-self: end;
+    margin-right: 2%;
+  }
+}
+

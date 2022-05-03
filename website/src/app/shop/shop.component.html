@@ -1,0 +1,16 @@
+<app-filter-bar
+(maxiumPriceEmitter) = 'updatedMaxiumPrice($event)'
+(filteredCategory) = 'updateCategories($event)'
+(showOnlyOnSale) = 'updateSaleProducts($event)'
+
+></app-filter-bar>
+<div class="products-container">
+  <h3>Shop</h3>
+  <hr>
+  <div *ngIf = "!isLoading" class="products-grid-container">
+    <div *ngFor = 'let product of products' class="card-container">
+      <app-product-item [product] = product></app-product-item>
+    </div>
+  </div>
+  <mat-spinner *ngIf = 'isLoading' style = "position: absolute; top:50%; left: 50%;"></mat-spinner>
+</div>

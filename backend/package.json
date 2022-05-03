@@ -1,0 +1,35 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend server for the curators website",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "Mitchell Yuen",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.665.0",
+    "bcrypt": "^4.0.1",
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "email-templates": "^7.0.4",
+    "express": "^4.17.1",
+    "handlebars": "^4.7.6",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.7",
+    "mongoose-unique-validator": "^2.0.3",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "nodemailer": "^6.4.6",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "pug": "^2.0.4",
+    "tinify": "^1.6.0-beta.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

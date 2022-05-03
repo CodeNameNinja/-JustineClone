@@ -1,0 +1,58 @@
+{
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.png",
+          "/index.html",
+          "/manifest.webmanifest",
+          "/*.css",
+          "/*.js"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/icon?family=Material+Icons"
+        ]
+      }
+    }, {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "Products",
+      "urls": [
+        "https://blooming-taiga-68574.herokuapp.com/admin/add-product"
+      ],
+      "cacheConfig": {
+        "maxSize": 10,
+        "maxAge": "6h",
+        "timeout": "10s",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "Orders",
+      "urls": [
+        "https://blooming-taiga-68574.herokuapp.com/shop/orders"
+      ],
+      "cacheConfig": {
+        "maxSize": 10,
+        "maxAge": "6h",
+        "timeout": "10s",
+        "strategy": "freshness"
+      }
+    }
+  ]
+}

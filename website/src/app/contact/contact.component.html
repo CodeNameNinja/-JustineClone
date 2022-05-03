@@ -1,0 +1,42 @@
+<div class="contact-container">
+  <div class="displayImage"></div>
+  <form (ngSubmit) = "onSubmit(form)" #form = "ngForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Full name</mat-label>
+      <input
+      matInput
+      ngModel
+      type="text"
+      name = "fullName">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Email address</mat-label>
+      <input
+      matInput
+      ngModel
+      type="text"
+      name = "email">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Number</mat-label>
+      <input
+      matInput
+      ngModel
+      type="text"
+      name = "phoneNumber">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Message</mat-label>
+      <textarea
+      matInput
+      ngModel
+      type="text"
+      name = "message"> </textarea>
+    </mat-form-field>
+    <br>
+    <button mat-button class = "bgPrimary" style = "color: white">Send</button>
+  </form>
+</div>
